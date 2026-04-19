@@ -1,4 +1,4 @@
-# DESIGN.md — [Project Name]
+# DESIGN.md — 株式会社エフルム コーポレートサイト
 
 > Japanese UI design contract for AI agents and human reviewers.
 
@@ -10,77 +10,78 @@
 - **Profile**: `base`
 - **Primary writing mode**: `horizontal-tb`
 - **Target surfaces**: `web`
-- **Review status**: `draft`
-- **Last reviewed at**: `YYYY-MM-DD`
-- **Reviewer**: `[name/team]`
+- **Review status**: `active`
+- **Last reviewed at**: `2026-04-19`
+- **Reviewer**: `yuuya1986`
 
 ---
 
 ## 1. Product Intent
 
-- **What this product is**:
-- **Primary audience**:
-- **Primary usage context**:
-- **Design stance**:
-- **Must feel like**:
-- **Must not feel like**:
+- **What this product is**: 株式会社エフルムのコーポレートサイト（単一ページ）
+- **Primary audience**: PSP審査担当者、取引先、事業パートナー
+- **Primary usage context**: デスクトップ・モバイルブラウザ
+- **Design stance**: 洗練・信頼・清潔感。ITビジネス企業として誠実で有能な印象を与える。
+- **Must feel like**: モダンなITスタートアップ。整理されていて、読みやすく、実在感がある。
+- **Must not feel like**: 過剰な装飾、アニメーションが多いランディングページ、個人ブログ。
 
 ---
 
 ## 2. Visual Theme & Brand Signals
 
-- **Keywords**:
-- **Visual temperature**: `calm | neutral | warm | sharp`
-- **Density**: `airy | balanced | compact`
-- **Tone**:
-- **Motion stance**: `minimal | moderate | expressive`
+- **Keywords**: 信頼・透明性・テクノロジー・つながり・洗練
+- **Visual temperature**: `sharp`
+- **Density**: `airy`
+- **Tone**: フォーマル寄りのプロフェッショナル。親しみはあるが軽くない。
+- **Motion stance**: `minimal`
 
 ---
 
 ## 3. Color System
 
 ### Brand colors
-- **Primary**: `#000000`
-- **Primary hover**:
-- **Accent**:
+- **Primary**: `#1A56DB`（ブルー）
+- **Primary hover**: `#1140A8`
+- **Accent**: `#1A56DB`
 
 ### Semantic colors
-- **Success**:
-- **Warning**:
-- **Danger**:
-- **Info**:
+- **Success**: `#16A34A`
+- **Warning**: `#D97706`
+- **Danger**: `#DC2626`
+- **Info**: `#0EA5E9`
 
 ### Neutral colors
-- **Text primary**:
-- **Text secondary**:
-- **Text muted**:
-- **Border**:
-- **Background**:
-- **Surface**:
-- **Surface elevated**:
+- **Text primary**: `#0F172A`
+- **Text secondary**: `#475569`
+- **Text muted**: `#94A3B8`
+- **Border**: `#E2E8F0`
+- **Background**: `#FFFFFF`
+- **Surface**: `#F8FAFC`
+- **Surface elevated**: `#FFFFFF`
 
 ### Color usage rules
 - Do not rely on color alone for meaning
 - Keep primary actions visually distinct
 - Avoid low-contrast muted text on tinted surfaces
+- Blue (#1A56DB) is used only for interactive elements and accent; do not overuse as decorative fill
 
 ---
 
 ## 4. Typography System
 
 ### 4.1 Japanese fonts
-- **Sans**:
-- **Serif**:
-- **Mono**:
+- **Sans**: `"Hiragino Kaku Gothic ProN"`, `"BIZ UDPGothic"`, `"Noto Sans JP"`
+- **Serif**: not used
+- **Mono**: not used
 
 ### 4.2 Latin fonts
-- **Sans**:
-- **Serif**:
-- **Mono**:
+- **Sans**: `Inter`, `system-ui`
+- **Serif**: not used
+- **Mono**: not used
 
 ### 4.3 Fallback policy
 ```css
-font-family: "Preferred Japanese Font", "Preferred Latin Font", sans-serif;
+font-family: Inter, system-ui, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", "Noto Sans JP", sans-serif;
 ```
 
 - Japanese fallback must be explicit
@@ -91,38 +92,32 @@ font-family: "Preferred Japanese Font", "Preferred Latin Font", sans-serif;
 
 | Role | Size | Weight | Line Height | Letter Spacing | Notes |
 |------|------|--------|-------------|----------------|------|
-| Display |  |  |  |  |  |
-| H1 |  |  |  |  |  |
-| H2 |  |  |  |  |  |
-| H3 |  |  |  |  |  |
-| Body L |  |  |  |  |  |
-| Body M |  |  |  |  |  |
-| Body S |  |  |  |  |  |
-| Caption |  |  |  |  |  |
-| Label |  |  |  |  |  |
-| Mono |  |  |  |  |  |
+| Display | 3rem | 700 | 1.2 | -0.01em | Hero見出し |
+| H1 | 2.25rem | 700 | 1.3 | -0.01em | ページ内大見出し |
+| H2 | 1.5rem | 600 | 1.4 | normal | セクション見出し |
+| H3 | 1.125rem | 600 | 1.5 | normal | カード見出し |
+| Body L | 1.0625rem | 400 | 1.8 | normal | 主要本文 |
+| Body M | 0.9375rem | 400 | 1.75 | normal | 通常本文 |
+| Body S | 0.875rem | 400 | 1.7 | normal | 補足 |
+| Caption | 0.75rem | 400 | 1.6 | normal | キャプション・メタ |
+| Label | 0.8125rem | 500 | 1.4 | 0.01em | ラベル・ナビ |
+| Mono | 0.875rem | 400 | 1.6 | normal | コード（未使用） |
 
 ### 4.5 Japanese paragraph rules
-- Default Japanese body line-height should usually stay within `1.5–2.0`
-- Default Japanese body letter-spacing should usually remain `normal` or conservative
-- Do not apply aggressive tracking to body text by default
+- Default Japanese body line-height: `1.75–1.8`
+- Default Japanese body letter-spacing: `normal`（本文への過剰なtrackingは禁止）
 - Heading and label spacing may differ from body spacing
 
 ### 4.6 Mixed-script rules
-- Review Japanese + Latin text together
+- 「ANIPIA」「シリヤト!!」などのサービス名は和欧混植になるため、フォントスタック全体で視覚的に検証する
 - Avoid visual collision in headings containing English product names
 - Do not optimize Latin words in a way that harms Japanese paragraph rhythm
-- Numeric strings, code, and IDs may require separate handling
 
 ### 4.7 OpenType and rendering
 ```css
 font-kerning: auto;
 font-feature-settings: normal;
 ```
-
-- `palt` may be used for headings or navigation after visual review
-- Avoid global `palt` on body text unless reading comfort is verified
-- Use proportional settings only where they improve actual reading
 
 ### 4.8 Writing direction
 - Default writing direction is horizontal
@@ -143,44 +138,22 @@ html:lang(ja) {
 
 ### Additional rules
 - Do not use global `word-break: break-all`
-- Use stronger breaking only for logs, hashes, URLs, and machine-like strings
 - Review headings at narrow widths
-- Review long English words inside Japanese UI
 - Prevent URL overflow without breaking paragraph readability
-
-### Optional enhancement
-```css
-h1:lang(ja),
-h2:lang(ja),
-h3:lang(ja) {
-  word-break: auto-phrase;
-}
-```
-
-### Experimental enhancement
-```css
-html:lang(ja) {
-  text-autospace: normal;
-}
-```
-
-- Treat `text-autospace` as progressive enhancement
-- Do not make it a hard dependency
 
 ---
 
 ## 6. Layout Principles
 
-- **Container width**:
-- **Reading width**:
-- **Grid system**:
-- **Spacing scale**:
-- **Section spacing rule**:
-- **Whitespace policy**:
+- **Container width**: `max-width: 1080px`
+- **Reading width**: `max-width: 720px`（本文・説明文）
+- **Grid system**: CSS Grid / Flexbox（フレームワーク不使用）
+- **Spacing scale**: 4px基準（4, 8, 12, 16, 24, 32, 48, 64, 96px）
+- **Section spacing rule**: セクション間は `padding: 96px 0`
+- **Whitespace policy**: airy — 要素間に十分な余白を確保し、窮屈な印象を与えない
 
 ### Layout rules
 - Reading width must prioritize comfort for Japanese paragraphs
-- Dense UI should compress containers before compressing line-height
 - Visual grouping should rely on spacing before borders when possible
 
 ---
@@ -188,31 +161,25 @@ html:lang(ja) {
 ## 7. Component Guidelines
 
 ### Buttons
-- Primary button must be obvious
-- Label length in Japanese must be tested
-- Avoid overly short button heights in compact layouts
+- Primary button: `background #1A56DB`, `color #FFFFFF`, `border-radius 6px`, `padding 12px 28px`
+- Primary hover: `background #1140A8`
+- Label length in Japanese must be tested（4〜8文字が理想）
 
-### Inputs
-- Placeholder is not a label replacement
-- Japanese IME input states must remain legible
-- Error and help text must stay readable at smaller sizes
+### Cards（サービスカード）
+- Border: `1px solid #E2E8F0`
+- Border-radius: `8px`
+- Padding: `32px`
+- Shadow: `0 1px 4px rgba(0,0,0,0.06)`
+- Keep title, body, and actions visually separated
 
-### Cards
-- Keep title, body, meta, and actions visually separated
-- Do not collapse vertical rhythm to fit more content unless profile requires it
-
-### Tables
+### Tables（会社概要）
 - Table density must be tuned separately from paragraph density
-- Numeric alignment and label wrapping must be reviewed
-- Avoid applying article-style line-height to high-density tables
+- `th` は左寄せ、幅固定（180px）
+- `td` は本文フォントサイズ、`Body M`
 
 ### Navigation
 - Mixed Japanese and English labels must be reviewed
-- Active state must be visible without relying on color alone
-
-### Modals / Drawers
-- Long Japanese text must not create cramped vertical rhythm
-- Confirm and cancel actions must remain distinct
+- Active state: `color #1A56DB`, underline or border-bottom
 
 ---
 
@@ -221,44 +188,40 @@ html:lang(ja) {
 ### Surface levels
 | Level | Usage | Border | Shadow |
 |------|------|--------|--------|
-| 0 | Page background | none | none |
-| 1 | Base surface | optional | subtle |
-| 2 | Raised card | optional | subtle |
-| 3 | Modal / overlay | optional | moderate |
+| 0 | Page background (#FFFFFF) | none | none |
+| 1 | Section surface (#F8FAFC) | none | none |
+| 2 | Card | 1px solid #E2E8F0 | 0 1px 4px rgba(0,0,0,0.06) |
+| 3 | Header (sticky) | bottom 1px solid #E2E8F0 | none |
 
 ### Rules
 - Prefer subtle depth
 - Avoid decorative shadows that reduce seriousness
-- Use border and elevation consistently
 
 ---
 
 ## 9. Responsive Behavior
 
-- **Breakpoints**:
-- **Mobile reading width**:
-- **Tablet layout stance**:
-- **Desktop layout stance**:
+- **Breakpoints**: `768px`（mobile/tablet境界）、`1100px`（wide）
+- **Mobile reading width**: `100%` with `padding 0 20px`
+- **Tablet layout stance**: 1カラムに縮退
+- **Desktop layout stance**: 2カラムカード、横並びナビ
 
 ### Responsive rules
 - Recheck paragraph rhythm on mobile
-- Recheck heading wrapping on mobile
-- Table fallback strategy must be explicit
-- Form spacing must be verified on small screens
+- Table fallback: モバイルでは `display: block` に変換
 - Dense desktop UI must not be copied directly onto mobile
 
 ---
 
 ## 10. Motion & Interaction
 
-- **Animation stance**:
-- **Transition speed**:
-- **Reduced motion policy**:
+- **Animation stance**: minimal
+- **Transition speed**: `200ms ease`
+- **Reduced motion policy**: `prefers-reduced-motion: reduce` を尊重
 
 ### Rules
 - Motion should support hierarchy, not decorate it
 - Avoid large shifts that disturb reading
-- Loading states must stay legible in Japanese
 
 ---
 
@@ -266,7 +229,7 @@ html:lang(ja) {
 
 ### Do
 - Preserve Japanese reading comfort
-- Keep mixed-script text visually balanced
+- Keep mixed-script text visually balanced（ANIPIA、シリヤト!! 等）
 - Review actual line breaks at real widths
 - Separate paragraph rules from table rules
 - Prefer stable defaults over clever tricks
@@ -294,15 +257,14 @@ When uncertain:
 - avoid aggressive spacing
 - avoid fragile wrapping rules
 
-Do not imitate Western editorial spacing in Japanese body text without review.
+Corporate color is blue (#1A56DB). Use it for CTAs, links, and accent elements only.
 
 ---
 
 ## 13. Validation Targets
 
-- Must pass long paragraph review
-- Must pass mixed-script heading review
+- Must pass long paragraph review（会社概要テーブル、特商法表記）
+- Must pass mixed-script heading review（ANIPIA、シリヤト!! の表示）
 - Must pass long URL overflow review
-- Must pass form density review
-- Must pass mobile layout review
-- Must pass color contrast review
+- Must pass mobile layout review（ナビ、カード、テーブル）
+- Must pass color contrast review（青背景上の白テキスト: WCAG AA準拠）
