@@ -130,28 +130,15 @@ section:nth-child(even) {
 
 /* ─── Hero ──────────────────────────────────────────────────── */
 .section-hero {
-  background: url('../img/hero.png') center center / cover no-repeat;
-  color: #fff;
-  padding-block: 120px;
-  text-align: left;
-  position: relative;
+  width: 100%;
+  line-height: 0;
 }
 
-.section-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
-  pointer-events: none;
-}
-
-.section-hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--sp-8);
-  position: relative;
-  z-index: 1;
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .hero-eyebrow {
@@ -595,10 +582,6 @@ h2:lang(ja), h3:lang(ja) {
     --text-display: 2rem;
     --text-h1: 1.625rem;
     --text-h2: 1.25rem;
-  }
-
-  .section-hero {
-    padding-block: 80px;
   }
 
   .site-nav {
