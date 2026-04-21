@@ -132,6 +132,7 @@ section:nth-child(even) {
 .section-hero {
   width: 100%;
   line-height: 0;
+  padding-block: 0;
 }
 
 .hero-image {
