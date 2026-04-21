@@ -100,7 +100,6 @@ section:nth-child(even) {
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--color-primary);
-  text-transform: uppercase;
 }
 
 .site-logo__ja {
@@ -453,7 +452,6 @@ h2:lang(ja), h3:lang(ja) {
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #fff;
-  text-transform: uppercase;
 }
 
 .footer-nav {
